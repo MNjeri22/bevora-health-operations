@@ -503,3 +503,48 @@
 .location-map .flag-symbol {
   display: none;
 }
+/* Moving announcement on every page */
+.announcement {
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.global-announcement-track {
+  display: flex;
+  width: max-content;
+  min-width: max-content;
+  animation: global-announcement-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.global-announcement-track span {
+  display: inline-block;
+  padding: 0.55rem 3.5rem;
+  font-weight: 650;
+}
+
+.global-announcement-track b {
+  padding: 0 1.4rem;
+  color: var(--gold);
+}
+
+.announcement:hover .global-announcement-track {
+  animation-play-state: paused;
+}
+
+@keyframes global-announcement-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-announcement-track {
+    animation: none;
+  }
+}
