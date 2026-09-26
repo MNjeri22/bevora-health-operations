@@ -120,3 +120,59 @@
     display: none;
   }
 }
+
+/* Who We Serve — full background image */
+.home-audiences {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(1, 29, 70, 0.78) 0%,
+      rgba(1, 29, 70, 0.93) 35%,
+      rgba(1, 29, 70, 0.93) 65%,
+      rgba(1, 29, 70, 0.78) 100%
+    ),
+    url("who-we-serve-background.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home-audiences .section-head h2 {
+  color: #ffffff;
+}
+
+.home-audiences .section-head p,
+.home-audiences .audience-message p {
+  color: #eef7f8;
+}
+
+.home-audiences .eyebrow {
+  color: #f2c55e;
+}
+
+.home-audiences .audience-home-grid a {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.home-audiences .audience-home-grid a:hover {
+  background: #ffffff;
+  border-color: var(--gold);
+}
+
+.home-audiences .audience-photo {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .home-audiences {
+    background-position: center;
+    background-image:
+      linear-gradient(rgba(1, 29, 70, 0.91), rgba(1, 29, 70, 0.91)),
+      url("who-we-serve-background.png");
+  }
+}
