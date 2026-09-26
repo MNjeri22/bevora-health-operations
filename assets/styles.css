@@ -809,3 +809,10 @@
 .service-grid a span {
   display: block;
 }
+/* Keep gold CTA button readable when hovered */
+.gold-button:hover {
+  background: #f2c55e;
+  color: #022c69 !important;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
