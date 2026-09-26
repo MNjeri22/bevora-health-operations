@@ -376,3 +376,15 @@
     animation: none;
   }
 }
+/* Service-area flag symbols */
+.map-symbol.flag-symbol {
+  width: 135px;
+  height: 105px;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.96);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
