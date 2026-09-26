@@ -44,3 +44,33 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
     });
   }
 })();
+/* Reliable announcement bar on every page */
+(() => {
+  let bar = document.querySelector(".announcement");
+  const header = document.querySelector(".site-header");
+
+  if (!bar) {
+    bar = document.createElement("div");
+    bar.className = "announcement";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Service announcement");
+
+    if (header) {
+      header.parentNode.insertBefore(bar, header);
+    } else {
+      document.body.prepend(bar);
+    }
+  }
+
+  const message =
+    "Now supporting behavioral-health organizations across the U.S. and selected U.K. markets. ✦ Schedule an Operational Assessment today.";
+
+  bar.innerHTML = `
+    <div class="reliable-marquee">
+      <span>${message}</span>
+      <span aria-hidden="true">${message}</span>
+      <span aria-hidden="true">${message}</span>
+      <span aria-hidden="true">${message}</span>
+    </div>
+  `;
+})();
