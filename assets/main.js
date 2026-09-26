@@ -74,3 +74,95 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
     </div>
   `;
 })();
+/* Shared detailed footer for every page */
+(() => {
+  const footer = document.querySelector("footer");
+
+  if (!footer) return;
+
+  const currentYear = new Date().getFullYear();
+
+  footer.className = "global-footer";
+
+  footer.innerHTML = `
+    <div class="footer-main">
+      <div class="footer-brand-column">
+        <a class="footer-logo" href="index.html">
+          <img src="assets/logo.jpeg" alt="Bevora Health Operations logo">
+
+          <span>
+            BEVORA
+            <small>HEALTH OPERATIONS</small>
+          </span>
+        </a>
+
+        <p>
+          The operational backbone behind thriving behavioral-health
+          organizations.
+        </p>
+
+        <p class="footer-tagline">
+          We handle the operations. You focus on care.
+        </p>
+
+        <a class="footer-assessment-button" href="contact.html">
+          Schedule an Operational Assessment
+        </a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Bevora</a>
+        <a href="services.html">Services</a>
+        <a href="who-we-serve.html">Who We Serve</a>
+        <a href="service-areas.html">Service Areas</a>
+        <a href="faq.html">FAQs</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Operational Support</h3>
+        <a href="services.html#documentation">Clinical Documentation</a>
+        <a href="services.html#authorizations">Authorizations & Utilization</a>
+        <a href="services.html#billing">Billing & Revenue Cycle</a>
+        <a href="services.html#credentialing">Credentialing & Enrollment</a>
+        <a href="services.html#compliance">Compliance & Quality</a>
+        <a href="services.html#automation">Workflow Automation</a>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h3>Contact</h3>
+
+        <a href="tel:+12157920894">
+          <span>Phone</span>
+          +1 (215) 792-0894
+        </a>
+
+        <a href="mailto:bevorahealthoperations@gmail.com">
+          <span>Email</span>
+          bevorahealthoperations@gmail.com
+        </a>
+
+        <div class="footer-service-markets">
+          <span>Service Markets</span>
+          <p>Maryland · Pennsylvania · Delaware</p>
+          <p>London · Manchester · Liverpool</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© ${currentYear} Bevora Health Operations. All rights reserved.</p>
+
+      <div>
+        <a href="privacy.html">Privacy Notice</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        Readiness support does not guarantee payer approval, reimbursement
+        or accreditation.
+      </p>
+    </div>
+  `;
+})();
