@@ -26,13 +26,61 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
   if (navigation) {
     navigation.innerHTML = `
       <a href="/">Home</a>
-      <a href="/services/">Services</a>
+      <div class="services-nav">
+        <div class="services-nav-trigger">
+          <a href="/services/">Services</a>
+          <button class="services-toggle" type="button" aria-expanded="false" aria-controls="services-mega" aria-label="Show Services menu"><span aria-hidden="true">⌄</span></button>
+        </div>
+        <div class="services-mega" id="services-mega" hidden>
+          <div class="mega-intro">
+            <span class="mega-eyebrow">Operational support</span>
+            <strong>Services built around your practice</strong>
+            <p>Choose one function or combine services into a support plan.</p>
+            <a class="mega-all" href="/services/">Explore all services <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="mega-links">
+            <a href="/services/#documentation"><strong>Clinical Documentation</strong><span>Records, plans and progress notes</span></a>
+            <a href="/services/#authorizations"><strong>Authorizations &amp; Utilization</strong><span>Submissions and deadline tracking</span></a>
+            <a href="/services/#billing"><strong>Billing &amp; Revenue Cycle</strong><span>Claims, denials and reconciliation</span></a>
+            <a href="/services/#credentialing"><strong>Credentialing &amp; Enrollment</strong><span>Applications and payer follow-up</span></a>
+            <a href="/services/#intake"><strong>Intake &amp; Scheduling</strong><span>Referrals and appointment coordination</span></a>
+            <a href="/services/#compliance"><strong>Compliance &amp; Quality</strong><span>Audits and accreditation readiness</span></a>
+            <a href="/services/#training"><strong>Training &amp; Development</strong><span>Onboarding and staff resources</span></a>
+            <a href="/services/#automation"><strong>Workflow Automation</strong><span>Alerts, trackers and dashboards</span></a>
+          </div>
+        </div>
+      </div>
       <a href="/who-we-serve/">Who We Serve</a>
       <a href="/about/">About</a>
       <a href="/service-areas/">Service Areas</a>
       <a href="/faq/">FAQs</a>
       <a class="nav-cta" href="/contact/">Schedule an Assessment</a>
     `;
+
+    const servicesNav = navigation.querySelector(".services-nav");
+    const servicesToggle = navigation.querySelector(".services-toggle");
+    const servicesPanel = navigation.querySelector(".services-mega");
+    const closeServices = () => {
+      servicesPanel.hidden = true;
+      servicesToggle.setAttribute("aria-expanded", "false");
+    };
+    servicesToggle.addEventListener("click", () => {
+      const opening = servicesPanel.hidden;
+      servicesPanel.hidden = !opening;
+      servicesToggle.setAttribute("aria-expanded", String(opening));
+    });
+    document.addEventListener("click", (event) => {
+      if (!servicesNav.contains(event.target)) closeServices();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !servicesPanel.hidden) {
+        closeServices();
+        servicesToggle.focus();
+      }
+    });
+    servicesPanel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeServices);
+    });
 
     const currentPage =
       window.location.pathname.split("/").pop() || "index.html";
