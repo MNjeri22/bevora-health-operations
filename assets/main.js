@@ -25,7 +25,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
 
   if (navigation) {
     navigation.innerHTML = `
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <a href="/services/">Services</a>
       <a href="who-we-serve.html">Who We Serve</a>
       <a href="about.html">About</a>
@@ -87,7 +87,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
   footer.innerHTML = `
     <div class="footer-main">
       <div class="footer-brand-column">
-        <a class="footer-logo" href="index.html">
+        <a class="footer-logo" href="/">
           <img src="assets/logo.jpeg" alt="Bevora Health Operations logo">
 
           <span>
@@ -112,7 +112,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
 
       <div class="footer-column">
         <h3>Explore</h3>
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="about.html">About Bevora</a>
         <a href="/services/">Services</a>
         <a href="who-we-serve.html">Who We Serve</a>
