@@ -862,3 +862,23 @@
 .site-header .services-toggle span{display:block;width:7px;height:7px;margin-top:-4px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;font-size:0;transform:rotate(45deg)}
 .site-header .services-toggle[aria-expanded="true"] span{margin-top:4px;transform:rotate(225deg)}
 @media(max-width:980px){.site-header .services-nav-trigger{display:flex;width:100%;justify-content:space-between}.site-header .services-toggle{flex-basis:38px;width:38px;height:38px}}
+
+/* Full-screen mobile navigation panel */
+@media(max-width:980px){
+  .site-header nav.open{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    height:calc(100vh - 84px);
+    height:calc(100dvh - 84px);
+    max-height:none;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    background:#fff;
+    padding:1.25rem 1.5rem 2rem;
+    box-shadow:none;
+    z-index:50;
+  }
+  body.mobile-nav-open{overflow:hidden}
+}
