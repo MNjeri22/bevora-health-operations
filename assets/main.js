@@ -26,7 +26,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
   if (navigation) {
     navigation.innerHTML = `
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a href="/services/">Services</a>
       <a href="who-we-serve.html">Who We Serve</a>
       <a href="about.html">About</a>
       <a href="service-areas.html">Service Areas</a>
@@ -114,7 +114,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
         <h3>Explore</h3>
         <a href="index.html">Home</a>
         <a href="about.html">About Bevora</a>
-        <a href="services.html">Services</a>
+        <a href="/services/">Services</a>
         <a href="who-we-serve.html">Who We Serve</a>
         <a href="service-areas.html">Service Areas</a>
         <a href="faq.html">FAQs</a>
@@ -122,12 +122,12 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
 
       <div class="footer-column">
         <h3>Operational Support</h3>
-        <a href="services.html#documentation">Clinical Documentation</a>
-        <a href="services.html#authorizations">Authorizations & Utilization</a>
-        <a href="services.html#billing">Billing & Revenue Cycle</a>
-        <a href="services.html#credentialing">Credentialing & Enrollment</a>
-        <a href="services.html#compliance">Compliance & Quality</a>
-        <a href="services.html#automation">Workflow Automation</a>
+        <a href="/services/#documentation">Clinical Documentation</a>
+        <a href="/services/#authorizations">Authorizations & Utilization</a>
+        <a href="/services/#billing">Billing & Revenue Cycle</a>
+        <a href="/services/#credentialing">Credentialing & Enrollment</a>
+        <a href="/services/#compliance">Compliance & Quality</a>
+        <a href="/services/#automation">Workflow Automation</a>
       </div>
 
       <div class="footer-column footer-contact">
