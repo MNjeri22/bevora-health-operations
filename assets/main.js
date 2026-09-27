@@ -93,6 +93,16 @@ if(menu&&nav){
           toggle.setAttribute("aria-expanded", "true");
         }
       });
+      const desktopHover = window.matchMedia("(min-width: 981px) and (hover: hover)");
+      container.addEventListener("pointerenter", () => {
+        if (!desktopHover.matches) return;
+        menus.forEach((menu) => menu.close());
+        panel.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      });
+      container.addEventListener("pointerleave", () => {
+        if (desktopHover.matches) close();
+      });
       panel.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
       return { container, toggle, panel, close };
     });
