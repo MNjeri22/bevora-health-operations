@@ -31,7 +31,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       <a href="/about/">About</a>
       <a href="/service-areas/">Service Areas</a>
       <a href="/faq/">FAQs</a>
-      <a class="nav-cta" href="contact.html">Schedule an Assessment</a>
+      <a class="nav-cta" href="/contact/">Schedule an Assessment</a>
     `;
 
     const currentPage =
@@ -105,7 +105,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
           We handle the operations. You focus on care.
         </p>
 
-        <a class="footer-assessment-button" href="contact.html">
+        <a class="footer-assessment-button" href="/contact/">
           Schedule an Operational Assessment
         </a>
       </div>
@@ -156,7 +156,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
 
       <div>
         <a href="privacy.html">Privacy Notice</a>
-        <a href="contact.html">Contact</a>
+        <a href="/contact/">Contact</a>
       </div>
 
       <p class="footer-disclaimer">
