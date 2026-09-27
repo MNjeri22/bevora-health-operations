@@ -16,7 +16,7 @@ In **Settings → Pages**, enter the domain under **Custom domain**. Follow GitH
 
 ## Contact form activation
 
-The form uses FormSubmit and sends to `bevorahealthoperations@gmail.com`. The first submission may trigger a confirmation email. Complete that confirmation before relying on the form. Test the entire flow before launch.
+The form uses FormSubmit and sends to `admin@bevorahealth.com`. The first submission may trigger a confirmation email. Complete that confirmation before relying on the form. Test the entire flow before launch.
 
 ## Important review before launch
 
