@@ -166,3 +166,32 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
     </div>
   `;
 })();
+/* Correct active navigation item for clean URLs */
+(function () {
+  let currentPage = window.location.pathname
+    .replace(/^\/+|\/+$/g, "")
+    .replace(/\/index\.html$/, "")
+    .replace(/\.html$/, "");
+
+  if (!currentPage || currentPage === "index") {
+    currentPage = "home";
+  }
+
+  const pageLabels = {
+    home: "Home",
+    services: "Services",
+    "who-we-serve": "Who We Serve",
+    about: "About",
+    "service-areas": "Service Areas",
+    faq: "FAQs",
+    contact: "Schedule an Assessment"
+  };
+
+  document.querySelectorAll("#nav a").forEach(function (link) {
+    link.removeAttribute("aria-current");
+
+    if (link.textContent.trim() === pageLabels[currentPage]) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+})();
