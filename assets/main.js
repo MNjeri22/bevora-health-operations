@@ -52,34 +52,51 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       </div>
       <a href="/who-we-serve/">Who We Serve</a>
       <a href="/about/">About</a>
-      <a href="/service-areas/">Service Areas</a>
+      <div class="services-nav areas-nav">
+        <div class="services-nav-trigger">
+          <a href="/service-areas/">Service Areas</a>
+          <button class="services-toggle" type="button" aria-expanded="false" aria-controls="areas-mega" aria-label="Show Service Areas menu"><span aria-hidden="true">⌄</span></button>
+        </div>
+        <div class="services-mega areas-mega" id="areas-mega" hidden>
+          <a href="/service-areas/#united-states"><strong>United States</strong><span>Maryland, Pennsylvania, Delaware and nationwide support</span></a>
+          <a href="/service-areas/#united-kingdom"><strong>United Kingdom</strong><span>Selected U.K. markets</span></a>
+        </div>
+      </div>
       <a href="/faq/">FAQs</a>
       <a class="nav-cta" href="/contact/">Schedule an Assessment</a>
     `;
 
-    const servicesNav = navigation.querySelector(".services-nav");
-    const servicesToggle = navigation.querySelector(".services-toggle");
-    const servicesPanel = navigation.querySelector(".services-mega");
-    const closeServices = () => {
-      servicesPanel.hidden = true;
-      servicesToggle.setAttribute("aria-expanded", "false");
-    };
-    servicesToggle.addEventListener("click", () => {
-      const opening = servicesPanel.hidden;
-      servicesPanel.hidden = !opening;
-      servicesToggle.setAttribute("aria-expanded", String(opening));
+    const menus = [...navigation.querySelectorAll(".services-nav")].map((container) => {
+      const toggle = container.querySelector(".services-toggle");
+      const panel = container.querySelector(".services-mega");
+      const close = () => {
+        panel.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+      };
+      toggle.addEventListener("click", () => {
+        const opening = panel.hidden;
+        menus.forEach((menu) => menu.close());
+        if (opening) {
+          panel.hidden = false;
+          toggle.setAttribute("aria-expanded", "true");
+        }
+      });
+      panel.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
+      return { container, toggle, panel, close };
     });
     document.addEventListener("click", (event) => {
-      if (!servicesNav.contains(event.target)) closeServices();
+      menus.forEach((menu) => {
+        if (!menu.container.contains(event.target)) menu.close();
+      });
     });
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !servicesPanel.hidden) {
-        closeServices();
-        servicesToggle.focus();
-      }
-    });
-    servicesPanel.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeServices);
+      if (event.key !== "Escape") return;
+      menus.forEach((menu) => {
+        if (!menu.panel.hidden) {
+          menu.close();
+          menu.toggle.focus();
+        }
+      });
     });
 
     const currentPage =
