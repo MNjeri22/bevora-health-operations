@@ -820,7 +820,7 @@
 /* Services mega menu */
 .services-nav{display:flex;align-items:center}
 .services-nav-trigger{display:flex;align-items:center;gap:.18rem}
-.services-toggle{display:grid;place-items:center;width:30px;height:30px;padding:0;border:0;background:transparent;color:var(--navy);font:700 1.2rem/1 inherit;cursor:pointer;border-radius:6px}
+.services-toggle{display:grid;place-items:center;width:30px;height:30px;padding:0;border:0;background:transparent;color:var(--navy);font-family:inherit;font-size:1.2rem;font-weight:700;line-height:1;cursor:pointer;border-radius:6px}
 .services-toggle:hover,.services-toggle:focus-visible{background:#eaf4f4;color:var(--teal)}
 .services-toggle[aria-expanded="true"] span{transform:rotate(180deg)}
 .services-mega[hidden]{display:none}
