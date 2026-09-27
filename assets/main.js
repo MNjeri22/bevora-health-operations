@@ -138,9 +138,9 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
           +1 (215) 792-0894
         </a>
 
-        <a href="mailto:bevorahealthoperations@gmail.com">
+        <a href="mailto:admin@bevorahealth.com">
           <span>Email</span>
-          bevorahealthoperations@gmail.com
+          admin@bevorahealth.com
         </a>
 
         <div class="footer-service-markets">
