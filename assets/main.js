@@ -155,7 +155,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       <p>© ${currentYear} Bevora Health Operations. All rights reserved.</p>
 
       <div>
-        <a href="privacy.html">Privacy Notice</a>
+        <a href="/privacy/">Privacy Notice</a>
         <a href="/contact/">Contact</a>
       </div>
 
