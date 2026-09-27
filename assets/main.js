@@ -30,7 +30,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       <a href="/who-we-serve/">Who We Serve</a>
       <a href="/about/">About</a>
       <a href="/service-areas/">Service Areas</a>
-      <a href="faq.html">FAQs</a>
+      <a href="/faq/">FAQs</a>
       <a class="nav-cta" href="contact.html">Schedule an Assessment</a>
     `;
 
@@ -117,7 +117,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
         <a href="/services/">Services</a>
         <a href="/who-we-serve/">Who We Serve</a>
         <a href="/service-areas/">Service Areas</a>
-        <a href="faq.html">FAQs</a>
+        <a href="/faq/">FAQs</a>
       </div>
 
       <div class="footer-column">
