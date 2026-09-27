@@ -845,3 +845,13 @@
   .mega-links{grid-template-columns:1fr;gap:0}
   .site-header nav.open{max-height:calc(100vh - 84px);overflow-y:auto}
 }
+
+/* Two-region Service Areas menu */
+.areas-mega{left:auto;right:clamp(1rem,5vw,5rem);width:min(520px,calc(100vw - 2rem));grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;padding:1rem}
+.site-header nav .areas-mega a{display:block;padding:1.15rem;border:1px solid var(--line);border-radius:12px;background:#f5fafa;font-size:.88rem;line-height:1.35}
+.site-header nav .areas-mega a:hover,.site-header nav .areas-mega a:focus-visible{background:#e4f3f3;color:var(--navy);border-color:var(--teal)}
+.areas-mega strong,.areas-mega span{display:block}
+.areas-mega strong{color:var(--navy)}
+.areas-mega span{margin-top:.35rem;color:#526b72;font-size:.75rem;font-weight:400}
+.region[id]{scroll-margin-top:105px}
+@media(max-width:980px){.areas-mega{width:auto;grid-template-columns:1fr;padding:.65rem}}
