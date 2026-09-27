@@ -28,7 +28,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       <a href="/">Home</a>
       <a href="/services/">Services</a>
       <a href="/who-we-serve/">Who We Serve</a>
-      <a href="about.html">About</a>
+      <a href="/about/">About</a>
       <a href="service-areas.html">Service Areas</a>
       <a href="faq.html">FAQs</a>
       <a class="nav-cta" href="contact.html">Schedule an Assessment</a>
@@ -113,7 +113,7 @@ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');if
       <div class="footer-column">
         <h3>Explore</h3>
         <a href="/">Home</a>
-        <a href="about.html">About Bevora</a>
+        <a href="/about/">About Bevora</a>
         <a href="/services/">Services</a>
         <a href="/who-we-serve/">Who We Serve</a>
         <a href="service-areas.html">Service Areas</a>
