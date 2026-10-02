@@ -904,3 +904,11 @@ footer,.global-footer{background:#064e55}
 .service-icon{color:var(--teal)}
 :where(a,button,input,select,textarea):focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 @media(min-width:981px) and (max-width:1200px){.site-header nav{gap:.75rem}.site-header nav a{font-size:.82rem}.nav-cta{padding:.7rem .8rem}}
+
+/* Homepage free-call offer */
+.free-call-offer{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem clamp(1.25rem,5vw,5rem);background:linear-gradient(110deg,#fff7da,#ffe9a3);border-bottom:2px solid var(--gold);color:var(--navy)}
+.free-call-offer .offer-label{display:inline-block;margin-bottom:.3rem;padding:.15rem .6rem;background:var(--teal);color:#fff;border-radius:999px;font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.free-call-offer h2{margin:0;font-family:Georgia,serif;font-size:clamp(1.35rem,2.5vw,1.9rem);line-height:1.2}
+.free-call-offer p{margin:.35rem 0 0;font-size:.85rem;line-height:1.5}
+.free-call-offer .button{flex-shrink:0;white-space:nowrap;box-shadow:0 5px 15px rgba(0,127,134,.15)}
+@media(max-width:640px){.free-call-offer{flex-direction:column;align-items:flex-start;gap:.85rem;padding:1.15rem 1.35rem}.free-call-offer .button{width:100%}}
