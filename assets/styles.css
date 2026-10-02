@@ -920,3 +920,13 @@ footer,.global-footer{background:#064e55}
 @keyframes offer-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:640px){.offer-ad{padding:.85rem 1rem;gap:.65rem;margin-bottom:1.3rem}.offer-ad-icon{flex-basis:44px;width:44px;height:44px}.offer-ad-icon svg{width:27px;height:27px}.offer-ad-copy small{font-size:.58rem}}
 @media(prefers-reduced-motion:reduce){.offer-ad,.offer-ad:before{animation:none}.offer-ad:before{display:none}}
+
+/* Centered gold offer badge */
+.offer-ad{display:grid;grid-template-columns:minmax(0,1fr) 58px;gap:1rem;padding:1.15rem 1.4rem;background:linear-gradient(135deg,#fff0ac,#f1cd5b 55%,#e6b839);border-color:#d5a52b;color:#064e55;box-shadow:inset 0 2px 0 rgba(255,255,255,.65),0 8px 24px rgba(151,110,14,.18);transform-origin:center;animation:offer-zoom 4s ease-in-out infinite}
+.offer-ad-copy{text-align:center;font-size:clamp(1.15rem,2.2vw,1.7rem);line-height:1.2}
+.offer-ad-copy strong{color:#064e55;font-size:inherit}
+.offer-ad-icon{width:58px;height:58px;background:#007f86;border-color:#fff2ba;color:#fff5cd;box-shadow:0 2px 8px rgba(0,80,85,.18)}
+.offer-ad:hover{animation-play-state:paused;box-shadow:0 10px 28px rgba(151,110,14,.25)}
+@keyframes offer-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@media(max-width:640px){.offer-ad{grid-template-columns:minmax(0,1fr) 44px;padding:1rem .95rem;gap:.65rem}.offer-ad-copy{font-size:clamp(1rem,4.4vw,1.35rem)}.offer-ad-icon{width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.offer-ad{animation:none}}
