@@ -75,7 +75,7 @@ if(menu&&nav){
         </div>
       </div>
       <a href="/faq/">FAQs</a>
-      <a class="nav-cta" href="/contact/">Schedule an Assessment</a>
+      <a class="nav-cta" href="/contact/">Book Your Free Call</a>
     `;
 
     const menus = [...navigation.querySelectorAll(".services-nav")].map((container) => {
@@ -193,7 +193,7 @@ if(menu&&nav){
         </p>
 
         <a class="footer-assessment-button" href="/contact/">
-          Schedule an Operational Assessment
+          Book Your Free Call
         </a>
       </div>
 
@@ -271,7 +271,7 @@ if(menu&&nav){
     about: "About",
     "service-areas": "Service Areas",
     faq: "FAQs",
-    contact: "Schedule an Assessment"
+    contact: "Book Your Free Call"
   };
 
   document.querySelectorAll("#nav a").forEach(function (link) {
