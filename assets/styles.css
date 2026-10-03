@@ -1019,3 +1019,11 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 .about-story-note a{font-weight:700;font-size:.9rem;text-underline-offset:4px}
 #about-purpose{scroll-margin-top:calc(var(--announcement-height,38px) + var(--header-height,84px) + 20px)}
 @media(max-width:700px){.page-hero.about-story-hero{padding:2.5rem 1.35rem}.about-story-heading{margin-bottom:1.5rem}.about-story-heading h1{font-size:clamp(2.1rem,8vw,3rem)}.about-story-note{padding:1.2rem}.about-story-note p{font-size:1rem}}
+
+/* Compact homepage tools logo strip */
+.home-tools{padding-top:36px;padding-bottom:36px;background:#fff;text-align:center}
+.home-tools h2{margin:0 0 26px;color:#012C69;font-family:Arial,sans-serif;font-size:clamp(24px,3vw,34px)}
+.tool-logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:22px 28px;max-width:1100px;margin:0 auto}
+.tool-logos img{display:block;width:100%;max-width:160px;height:64px;object-fit:contain;margin:auto}
+@media(max-width:900px){.tool-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.tool-logos img{height:58px}}
+@media(max-width:560px){.home-tools{padding-top:28px;padding-bottom:28px}.home-tools h2{margin-bottom:22px}.tool-logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 12px}.tool-logos img{height:48px}}
