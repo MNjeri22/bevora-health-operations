@@ -555,7 +555,7 @@
   min-height: 38px;
   overflow: hidden !important;
   color: #ffffff !important;
-  background: #012C69 !important;
+  background: var(--gold) !important;
   font-family: "Rajdhani", "Arial Narrow", sans-serif;
   white-space: nowrap;
 }
@@ -928,3 +928,6 @@ footer,.global-footer{background:#064e55}
 
 /* Navy backgrounds for complete support, footer and offer plaque */
 .section.navy,footer,.global-footer,.offer-ad{background:#012C69}
+
+/* Gold announcement bar with navy lettering */
+.announcement,.announcement .reliable-marquee span{color:#012C69!important}
