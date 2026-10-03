@@ -990,3 +990,19 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 .accreditation-context{max-width:950px;margin:2rem auto 0;text-align:center;font-size:.85rem;line-height:1.6}
 @media(max-width:1000px){.accreditation-logos{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){.accreditation-logos{grid-template-columns:repeat(2,minmax(0,1fr))}.accreditation-logos figure{padding:1rem .75rem}.accreditation-logos img{height:95px}.accreditation-logos figure:last-child{grid-column:1/-1;max-width:280px;width:100%;justify-self:center}}
+
+/* Who We Serve: centered introduction and paired photo story */
+.page-hero.audiences-hero{padding:4rem clamp(1.35rem,6vw,6rem) 3.5rem;background:#F6F7F3;color:#012C69}
+.audiences-hero-intro{max-width:900px;margin:0 auto 2.7rem;text-align:center}
+.audiences-hero .eyebrow{color:#007f86}
+.audiences-hero h1{color:#012C69;font-size:clamp(2.3rem,4.3vw,4.3rem);line-height:1.12;letter-spacing:-.035em;margin:.8rem auto 1.2rem;text-wrap:balance}
+.audiences-hero p{max-width:720px;margin:0 auto 1.5rem;font-size:1.1rem;line-height:1.7}
+.audiences-hero-intro .button{gap:.7rem}
+.audiences-photo-story{display:grid;grid-template-columns:1.12fr 1fr;align-items:start;gap:1.5rem;max-width:1200px;margin:auto}
+.audiences-photo-story figure{margin:0;overflow:hidden;border-radius:18px;background:#012C69;box-shadow:0 12px 30px rgba(1,44,105,.12)}
+.audiences-photo-story figure:last-child{margin-top:2rem}
+.audiences-photo-story img{display:block;width:100%;aspect-ratio:1.65;object-fit:cover;object-position:center}
+.audiences-photo-story figcaption{padding:1rem 1.25rem;color:#fff;font-size:.9rem;font-weight:600;border-top:3px solid #FFE17A}
+.audiences-photo-story figure:last-child figcaption{background:#FFE17A;color:#012C69}
+#provider-types{scroll-margin-top:calc(var(--announcement-height,38px) + var(--header-height,84px) + 20px)}
+@media(max-width:700px){.page-hero.audiences-hero{padding-top:2.5rem}.audiences-hero-intro{margin-bottom:2rem}.audiences-hero p{font-size:1rem}.audiences-photo-story{grid-template-columns:1fr;gap:1.2rem}.audiences-photo-story figure:last-child{margin-top:0}.audiences-photo-story img{aspect-ratio:1.6}.audiences-photo-story figcaption{font-size:.82rem;padding:.85rem 1rem}}
