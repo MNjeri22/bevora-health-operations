@@ -951,10 +951,10 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 .home-service-areas .location-map{background-color:#012C69;background-image:radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 3px);background-size:28px 28px}
 
 /* Yellow homepage closing call to action */
-body:has(.hero-photo) .cta{background:#FFE17A;color:#012C69}
-body:has(.hero-photo) .cta h2,body:has(.hero-photo) .cta .eyebrow{color:#012C69}
-body:has(.hero-photo) .cta .gold-button{background:#012C69;color:#fff!important;border-color:#012C69}
-body:has(.hero-photo) .cta .gold-button:hover{background:#007f86;border-color:#007f86}
+.cta{background:#FFE17A;color:#012C69}
+.cta h2,.cta .eyebrow{color:#012C69}
+.cta .gold-button{background:#012C69;color:#fff!important;border-color:#012C69}
+.cta .gold-button:hover{background:#007f86;border-color:#007f86}
 
 /* Services introduction: editorial split layout */
 .page-hero.services-hero{display:grid;grid-template-columns:1fr 1.12fr;align-items:center;gap:clamp(2rem,4vw,5rem);padding:4.5rem clamp(1.5rem,6vw,6rem);background:#012C69}
