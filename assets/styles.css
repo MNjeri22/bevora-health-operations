@@ -922,3 +922,6 @@ footer,.global-footer{background:#064e55}
 @keyframes offer-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
 @media(max-width:640px){.offer-ad{width:270px;margin:1.2rem auto 1.8rem}}
 @media(prefers-reduced-motion:reduce){.offer-ad{animation:none}}
+
+/* Navy text for homepage hero and featured section headings */
+.hero-copy h1,.hero-copy > .eyebrow,.float-card h2,.float-card > .badge,.home-service-areas .section-head h2,.home-service-areas .section-head > .eyebrow{color:#012C69}
