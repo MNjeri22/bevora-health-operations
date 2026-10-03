@@ -931,3 +931,15 @@ footer,.global-footer{background:#064e55}
 
 /* Gold announcement bar with navy lettering */
 .announcement,.announcement .reliable-marquee span{color:#012C69!important}
+
+/* Persistent announcement and back-to-top control */
+:root{--announcement-height:38px;--header-height:84px}
+.announcement{position:sticky;top:0;z-index:30;height:var(--announcement-height)}
+.site-header{top:var(--announcement-height)}
+html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) + 16px)}
+.back-to-top{position:fixed;right:clamp(1rem,3vw,2rem);bottom:calc(1.25rem + env(safe-area-inset-bottom));z-index:19;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;background:#012C69;color:#ffe17a;box-shadow:0 4px 16px rgba(1,44,105,.2);cursor:pointer;transition:background .2s,transform .2s}
+.back-to-top[hidden]{display:none}
+.back-to-top:hover{background:#007f86;transform:translateY(-3px)}
+.back-to-top svg{width:22px;height:22px}
+@media(max-width:980px){.site-header nav.open{height:calc(100vh - var(--header-height) - var(--announcement-height));height:calc(100dvh - var(--header-height) - var(--announcement-height))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.back-to-top{transition:none}}
