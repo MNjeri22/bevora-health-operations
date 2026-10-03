@@ -1006,3 +1006,16 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 .audiences-photo-story figure:last-child figcaption{background:#FFE17A;color:#012C69}
 #provider-types{scroll-margin-top:calc(var(--announcement-height,38px) + var(--header-height,84px) + 20px)}
 @media(max-width:700px){.page-hero.audiences-hero{padding-top:2.5rem}.audiences-hero-intro{margin-bottom:2rem}.audiences-hero p{font-size:1rem}.audiences-photo-story{grid-template-columns:1fr;gap:1.2rem}.audiences-photo-story figure:last-child{margin-top:0}.audiences-photo-story img{height:auto;aspect-ratio:auto}.audiences-photo-story figcaption{font-size:.82rem;padding:.85rem 1rem}}
+
+/* About: full-width team photograph with an editorial introduction */
+.page-hero.about-story-hero{padding:3.5rem clamp(1.35rem,7vw,7rem) 3rem;background:linear-gradient(#012C69 0%,#012C69 68%,#F6F7F3 68%,#F6F7F3 100%)}
+.about-story-heading{display:grid;grid-template-columns:1fr 2.2fr;gap:2rem;align-items:start;max-width:1200px;margin:0 auto 2.2rem}
+.about-story-heading .eyebrow{color:#FFE17A;margin-top:.8rem;max-width:240px;line-height:1.7}
+.about-story-heading h1{font-size:clamp(2.4rem,4.7vw,4.7rem);line-height:1.08;letter-spacing:-.035em;margin:0;color:#fff;text-wrap:balance}
+.about-story-photo{max-width:1200px;margin:0 auto;overflow:hidden;border-radius:18px;box-shadow:0 15px 40px rgba(1,44,105,.15)}
+.about-story-photo img{display:block;width:100%;height:auto}
+.about-story-note{position:relative;max-width:860px;margin:-2rem 2rem 0 auto;padding:1.8rem 2rem;background:#FFE17A;color:#012C69;border-radius:12px;box-shadow:0 8px 25px rgba(1,44,105,.1)}
+.about-story-note p{max-width:none;margin:0 0 1rem;font-size:1.05rem;line-height:1.7}
+.about-story-note a{font-weight:700;font-size:.9rem;text-underline-offset:4px}
+#about-purpose{scroll-margin-top:calc(var(--announcement-height,38px) + var(--header-height,84px) + 20px)}
+@media(max-width:700px){.page-hero.about-story-hero{padding-top:2.5rem}.about-story-heading{grid-template-columns:1fr;gap:.8rem;margin-bottom:1.5rem}.about-story-heading .eyebrow{max-width:none;margin:0}.about-story-heading h1{font-size:clamp(2.2rem,8vw,3.3rem)}.about-story-photo{border-radius:12px}.about-story-note{margin:1rem 0 0;padding:1.3rem;border-radius:10px}.about-story-note p{font-size:1rem}}
