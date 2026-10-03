@@ -950,3 +950,9 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 
 /* Navy background behind the service-area flags */
 .home-service-areas .location-map{background-color:#012C69;background-image:radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 3px);background-size:28px 28px}
+
+/* Yellow homepage closing call to action */
+body:has(.hero-photo) .cta{background:#FFE17A;color:#012C69}
+body:has(.hero-photo) .cta h2,body:has(.hero-photo) .cta .eyebrow{color:#012C69}
+body:has(.hero-photo) .cta .gold-button{background:#012C69;color:#fff!important;border-color:#012C69}
+body:has(.hero-photo) .cta .gold-button:hover{background:#007f86;border-color:#007f86}
