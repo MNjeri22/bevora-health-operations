@@ -943,3 +943,7 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 .back-to-top svg{width:22px;height:22px}
 @media(max-width:980px){.site-header nav.open{height:calc(100vh - var(--header-height) - var(--announcement-height));height:calc(100dvh - var(--header-height) - var(--announcement-height))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.back-to-top{transition:none}}
+
+/* Warm yellow Who We Serve section */
+.home-audiences{background:#FFE17A;color:#012C69}
+.home-audiences .section-head h2,.home-audiences .section-head p,.home-audiences .audience-message p,.home-audiences .eyebrow{color:#012C69}
