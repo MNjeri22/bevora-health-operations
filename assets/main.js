@@ -21,7 +21,7 @@ if(menu&&nav){
         <span>
           Now supporting behavioral-health organizations across the U.S. and U.K. markets.
           <b>✦</b>
-          Schedule an Operational Assessment today.
+           Schedule a FREE Call today.
         </span>
 
         <span aria-hidden="true">
@@ -244,7 +244,10 @@ if(menu&&nav){
         <a href="/privacy/">Privacy Notice</a>
         <a href="/contact/">Contact</a>
       </div>
-
+<p class="footer-disclaimer">
+        Readiness support does not guarantee payer approval, reimbursement
+        or accreditation.
+      </p>
       
     </div>
   `;
