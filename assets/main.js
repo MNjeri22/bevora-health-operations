@@ -150,7 +150,7 @@ if(menu&&nav){
   }
 
   const message =
-    "Now supporting behavioral-health organizations across the U.S. and selected U.K. markets. ✦ Schedule an Operational Assessment today.";
+    "Now supporting behavioral-health organizations across the U.S. and selected U.K. markets. ✦ <strong>Schedule an Operational Assessment today.</strong>";
 
   bar.innerHTML = `
     <div class="reliable-marquee">
