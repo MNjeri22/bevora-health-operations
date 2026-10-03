@@ -925,3 +925,6 @@ footer,.global-footer{background:#064e55}
 
 /* Navy text for homepage hero and featured section headings */
 .hero-copy h1,.hero-copy > .eyebrow,.float-card h2,.float-card > .badge,.home-service-areas .section-head h2,.home-service-areas .section-head > .eyebrow{color:#012C69}
+
+/* Navy backgrounds for complete support, footer and offer plaque */
+.section.navy,footer,.global-footer,.offer-ad{background:#012C69}
