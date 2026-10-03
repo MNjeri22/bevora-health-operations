@@ -906,27 +906,16 @@ footer,.global-footer{background:#064e55}
 @media(min-width:981px) and (max-width:1200px){.site-header nav{gap:.75rem}.site-header nav a{font-size:.82rem}.nav-cta{padding:.7rem .8rem}}
 
 
-/* Animated hero offer badge */
-.offer-ad{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;width:min(100%,570px);margin:0 0 1.8rem;padding:1.05rem 1.35rem;border:3px solid #e4bb51;border-radius:999px;background:linear-gradient(145deg,#008c91,#005a62 75%);color:#fff9e7;text-decoration:none;box-shadow:inset 0 2px 0 rgba(255,255,255,.3),inset 0 -4px 9px rgba(0,0,0,.17),0 8px 24px rgba(0,99,106,.2);overflow:hidden;animation:offer-arrive .7s ease-out both}
-.offer-ad:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,245,195,.25) 48%,transparent 65%);transform:translateX(-130%);animation:offer-shine 5s ease-in-out 1s infinite;pointer-events:none}
-.offer-ad-copy{position:relative;display:block;font-family:Georgia,serif;line-height:1.15;font-size:clamp(1.1rem,2vw,1.65rem)}
-.offer-ad-copy strong{color:#ffe18a;font-size:1.25em}
-.offer-ad-copy small{display:block;margin-top:.3rem;font-family:"Montserrat",Arial,sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.08em}
-.offer-ad-icon{position:relative;display:grid;place-items:center;flex:0 0 58px;width:58px;height:58px;border:2px solid #e4bb51;border-radius:50%;background:#17364f;color:#ffe18a}
-.offer-ad-icon svg{width:34px;height:34px}
-.offer-ad:hover{box-shadow:inset 0 2px 0 rgba(255,255,255,.3),0 10px 30px rgba(0,99,106,.3)}
-.offer-ad:hover:before{animation-play-state:paused}
-@keyframes offer-shine{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
-@keyframes offer-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:640px){.offer-ad{padding:.85rem 1rem;gap:.65rem;margin-bottom:1.3rem}.offer-ad-icon{flex-basis:44px;width:44px;height:44px}.offer-ad-icon svg{width:27px;height:27px}.offer-ad-copy small{font-size:.58rem}}
-@media(prefers-reduced-motion:reduce){.offer-ad,.offer-ad:before{animation:none}.offer-ad:before{display:none}}
 
-/* Centered gold offer badge */
-.offer-ad{display:grid;grid-template-columns:minmax(0,1fr) 58px;gap:1rem;padding:1.15rem 1.4rem;background:linear-gradient(135deg,#fff0ac,#f1cd5b 55%,#e6b839);border-color:#d5a52b;color:#064e55;box-shadow:inset 0 2px 0 rgba(255,255,255,.65),0 8px 24px rgba(151,110,14,.18);transform-origin:center;animation:offer-zoom 4s ease-in-out infinite}
-.offer-ad-copy{text-align:center;font-size:clamp(1.15rem,2.2vw,1.7rem);line-height:1.2}
-.offer-ad-copy strong{color:#064e55;font-size:inherit}
-.offer-ad-icon{width:58px;height:58px;background:#007f86;border-color:#fff2ba;color:#fff5cd;box-shadow:0 2px 8px rgba(0,80,85,.18)}
-.offer-ad:hover{animation-play-state:paused;box-shadow:0 10px 28px rgba(151,110,14,.25)}
-@keyframes offer-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
-@media(max-width:640px){.offer-ad{grid-template-columns:minmax(0,1fr) 44px;padding:1rem .95rem;gap:.65rem}.offer-ad-copy{font-size:clamp(1rem,4.4vw,1.35rem)}.offer-ad-icon{width:44px;height:44px}}
+/* Ribbon offer plaque */
+.offer-ad{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:290px;max-width:calc(100% - 14px);min-height:130px;margin:1rem 0 2rem;padding:1.15rem 1.4rem 1rem;border:3px solid #d2a643;border-radius:12px;background:linear-gradient(140deg,#07878e,#006975 65%,#174358);color:#fff;text-decoration:none;box-shadow:inset 0 0 0 2px rgba(255,227,144,.24),0 5px 0 #ae842c,0 10px 20px rgba(23,54,79,.19);animation:offer-zoom 4s ease-in-out infinite;transform-origin:center}
+.offer-ribbon{position:absolute;top:-9px;left:-12px;z-index:1;min-width:91px;padding:.32rem .85rem;background:linear-gradient(180deg,#fff0a6,#e8bc53);color:#17364f;box-shadow:0 2px 4px rgba(0,0,0,.16);transform:rotate(-16deg);font-family:Georgia,serif;font-weight:700;font-size:.86rem;text-align:center;letter-spacing:.04em}
+.offer-ribbon:before{content:"";position:absolute;left:0;bottom:-9px;border-top:9px solid #9e7525;border-left:10px solid transparent}
+.offer-ribbon:after{content:"";position:absolute;right:-9px;top:0;width:15px;height:100%;background:linear-gradient(90deg,#c99935,#fff0a6);border-radius:0 9px 9px 0;z-index:-1}
+.offer-ad-duration{font-family:"Montserrat",Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#ffdf7c}
+.offer-ad-title{display:block;margin:.22rem 0;font-family:Georgia,serif;font-size:1.85rem;font-weight:700;line-height:1.02;text-align:center}
+.offer-ad-caption{font-family:"Montserrat",Arial,sans-serif;font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.offer-ad:hover{animation-play-state:paused;box-shadow:inset 0 0 0 2px rgba(255,227,144,.45),0 5px 0 #ae842c,0 12px 26px rgba(23,54,79,.25)}
+@keyframes offer-zoom{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media(max-width:640px){.offer-ad{width:270px;margin:1.2rem auto 1.8rem}}
 @media(prefers-reduced-motion:reduce){.offer-ad{animation:none}}
