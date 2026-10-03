@@ -947,3 +947,6 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 /* Warm yellow Who We Serve section */
 .home-audiences{background:#FFE17A;color:#012C69}
 .home-audiences .section-head h2,.home-audiences .section-head p,.home-audiences .audience-message p,.home-audiences .eyebrow{color:#012C69}
+
+/* Navy background behind the service-area flags */
+.home-service-areas .location-map{background-color:#012C69;background-image:radial-gradient(circle,rgba(255,255,255,.18) 2px,transparent 3px);background-size:28px 28px}
