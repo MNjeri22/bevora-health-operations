@@ -150,7 +150,7 @@ if(menu&&nav){
   }
 
   const message =
-    "Now supporting behavioral-health organizations across the U.S. and selected U.K. markets. ✦ <strong>Schedule an Operational Assessment today.</strong>";
+    "Now supporting behavioral-health organizations across the U.S. and U.K. markets. ✦ <strong> Schedule a FREE Call today!!</strong>";
 
   bar.innerHTML = `
     <div class="reliable-marquee">
@@ -244,10 +244,7 @@ if(menu&&nav){
         <a href="/privacy/">Privacy Notice</a>
         <a href="/contact/">Contact</a>
       </div>
-<p class="footer-disclaimer">
-        Readiness support does not guarantee payer approval, reimbursement
-        or accreditation.
-      </p>
+
       
     </div>
   `;
