@@ -282,3 +282,35 @@ if(menu&&nav){
     }
   });
 })();
+
+/* Keep sticky offsets accurate and provide a back-to-top button. */
+(() => {
+  const bar = document.querySelector(".announcement");
+  const header = document.querySelector(".site-header");
+  const syncOffsets = () => {
+    if (bar) document.documentElement.style.setProperty("--announcement-height", bar.offsetHeight + "px");
+    if (header) document.documentElement.style.setProperty("--header-height", header.offsetHeight + "px");
+  };
+  syncOffsets();
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(syncOffsets);
+    if (bar) observer.observe(bar);
+    if (header) observer.observe(header);
+  } else window.addEventListener("resize", syncOffsets);
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "back-to-top";
+  button.setAttribute("aria-label", "Back to top");
+  button.title = "Back to top";
+  button.hidden = true;
+  button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.append(button);
+  const updateVisibility = () => { button.hidden = window.scrollY < 400; };
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  updateVisibility();
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    const home = document.querySelector(".site-header .brand");
+    if (home) home.focus({ preventScroll: true });
+  });
+})();
