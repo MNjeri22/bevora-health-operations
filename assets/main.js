@@ -19,15 +19,15 @@ if(menu&&nav){
     announcement.innerHTML = `
       <div class="global-announcement-track">
         <span>
-          Now supporting behavioral-health organizations across the U.S. and selected U.K. markets.
+          Now supporting behavioral-health organizations across the U.S. and U.K. markets.
           <b>✦</b>
           Schedule an Operational Assessment today.
         </span>
 
         <span aria-hidden="true">
-          Now supporting behavioral-health organizations across the U.S. and selected U.K. markets.
+          Now supporting behavioral-health organizations across the U.S. and U.K. markets.
           <b>✦</b>
-          Schedule an Operational Assessment today.
+          Schedule a FREE Call today.
         </span>
       </div>
     `;
@@ -184,8 +184,7 @@ if(menu&&nav){
         </a>
 
         <p>
-          The operational backbone behind thriving behavioral-health
-          organizations.
+          The operational backbone behind every thriving practice.
         </p>
 
         <p class="footer-tagline">
@@ -246,10 +245,7 @@ if(menu&&nav){
         <a href="/contact/">Contact</a>
       </div>
 
-      <p class="footer-disclaimer">
-        Readiness support does not guarantee payer approval, reimbursement
-        or accreditation.
-      </p>
+      
     </div>
   `;
 })();
