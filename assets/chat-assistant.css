@@ -22,3 +22,18 @@
 .back-to-top{right:88px}
 body.mobile-nav-open .bevora-chat{display:none}
 @media(max-width:480px){.bevora-chat{right:14px;bottom:calc(14px + env(safe-area-inset-bottom))}.bevora-chat-panel{bottom:68px;width:calc(100vw - 28px);height:min(540px,calc(100dvh - 150px))}.back-to-top{right:82px}}
+
+/* Visible yellow launcher and lead handoff */
+.bevora-chat-launcher{background:#FFE17A;color:#012C69;border-color:#c99b22}
+.bevora-chat [hidden]{display:none!important}
+.bevora-chat-lead{padding:18px;display:grid;gap:12px;overflow-y:auto;flex:1;min-height:0}
+.bevora-chat-lead p{margin:0;font-weight:700;font-size:16px}
+.bevora-chat-lead label{display:grid;gap:4px;font-size:14px;font-weight:700}
+.bevora-chat-lead input{width:100%;padding:10px;border:1px solid #b9cccf;border-radius:8px;font:16px Arial,sans-serif}
+.bevora-chat-lead small{font-size:12px;line-height:1.5}
+.bevora-chat-lead button,.bevora-chat-email{padding:11px;border:0;border-radius:8px;background:#012C69;color:#fff;font-weight:700;cursor:pointer}
+.bevora-chat-handoff{padding:0 12px 10px;display:grid;grid-template-columns:1fr 1fr;gap:8px;flex-shrink:0}
+.bevora-chat-whatsapp{display:flex;align-items:center;justify-content:center;text-align:center;background:#007f86;color:#fff;padding:10px 6px;border-radius:8px;text-decoration:none;font-size:12px;font-weight:700}
+.bevora-chat-email{font-size:12px}.bevora-chat-email:disabled{opacity:.7;cursor:default}
+.bevora-chat-status{grid-column:1/-1;font-size:12px;line-height:1.4}
+.bevora-chat-status:empty{display:none}
