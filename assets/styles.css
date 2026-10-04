@@ -1021,12 +1021,11 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 @media(max-width:700px){.page-hero.about-story-hero{padding:2.5rem 1.35rem}.about-story-heading{margin-bottom:1.5rem}.about-story-heading h1{font-size:clamp(2.1rem,8vw,3rem)}.about-story-note{padding:1.2rem}.about-story-note p{font-size:1rem}}
 
 /* Compact homepage tools logo strip */
-.home-tools{padding-top:36px;padding-bottom:36px;background:#fff;text-align:center}
-.home-tools h2{margin:0 0 26px;color:#012C69;font-family:Arial,sans-serif;font-size:clamp(24px,3vw,34px)}
-.tool-logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:22px 28px;max-width:1100px;margin:0 auto}
-.tool-logos img{display:block;width:100%;max-width:160px;height:64px;object-fit:contain;margin:auto}
-@media(max-width:900px){.tool-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.tool-logos img{height:58px}}
-@media(max-width:560px){.home-tools{padding-top:28px;padding-bottom:28px}.home-tools h2{margin-bottom:22px}.tool-logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 12px}.tool-logos img{height:48px}}
+.home-tools{padding-top:34px;padding-bottom:34px;background:#012C69;text-align:center}
+.tool-logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:18px 24px;max-width:1200px;margin:0 auto}
+.tool-logos img{display:block;box-sizing:border-box;width:100%;max-width:180px;height:88px;object-fit:contain;margin:auto;padding:10px;background:#fff}
+@media(max-width:900px){.tool-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.tool-logos img{height:80px}}
+@media(max-width:560px){.home-tools{padding:26px 20px}.tool-logos{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tool-logos img{height:68px;padding:6px}}
 
 /* Service areas introductory map */
 .service-area-hero{text-align:center}.service-area-hero>p{margin-left:auto;margin-right:auto}.service-area-map{max-width:1120px;margin:32px auto 0;border:1px solid rgba(201,155,34,.65);border-radius:18px;overflow:hidden;background:#f6fafb;box-shadow:0 14px 35px rgba(1,44,105,.16)}.service-area-map img{display:block;width:100%;height:auto;object-fit:contain}@media(max-width:600px){.service-area-map{margin-top:24px;border-radius:10px}.service-area-hero{padding-left:20px;padding-right:20px}}
