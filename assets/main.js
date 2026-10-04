@@ -81,28 +81,44 @@ if(menu&&nav){
     const menus = [...navigation.querySelectorAll(".services-nav")].map((container) => {
       const toggle = container.querySelector(".services-toggle");
       const panel = container.querySelector(".services-mega");
+      const desktopHover = window.matchMedia("(min-width: 981px) and (hover: hover)");
+      let closeTimer;
+      let pinned = false;
+      const cancelClose = () => window.clearTimeout(closeTimer);
       const close = () => {
+        cancelClose();
+        pinned = false;
         panel.hidden = true;
         toggle.setAttribute("aria-expanded", "false");
       };
-      toggle.addEventListener("click", () => {
-        const opening = panel.hidden;
-        menus.forEach((menu) => menu.close());
-        if (opening) {
-          panel.hidden = false;
-          toggle.setAttribute("aria-expanded", "true");
-        }
-      });
-      const desktopHover = window.matchMedia("(min-width: 981px) and (hover: hover)");
-      container.addEventListener("pointerenter", () => {
-        if (!desktopHover.matches) return;
-        menus.forEach((menu) => menu.close());
+      const open = () => {
+        cancelClose();
+        menus.forEach((menu) => { if (menu.container !== container) menu.close(); });
         panel.hidden = false;
         toggle.setAttribute("aria-expanded", "true");
+      };
+      const scheduleClose = () => {
+        cancelClose();
+        if (!desktopHover.matches || pinned) return;
+        closeTimer = window.setTimeout(() => {
+          if (!pinned && !container.matches(":hover") && !container.contains(document.activeElement)) close();
+        }, 350);
+      };
+      toggle.addEventListener("click", () => {
+        if (pinned) close();
+        else {
+          open();
+          pinned = true;
+        }
       });
-      container.addEventListener("pointerleave", () => {
-        if (desktopHover.matches) close();
+      container.addEventListener("pointerenter", () => {
+        if (desktopHover.matches) open();
       });
+      container.addEventListener("pointerleave", scheduleClose);
+      panel.addEventListener("pointerenter", cancelClose);
+      panel.addEventListener("pointerleave", scheduleClose);
+      container.addEventListener("focusin", cancelClose);
+      container.addEventListener("focusout", scheduleClose);
       panel.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
       return { container, toggle, panel, close };
     });
