@@ -36,10 +36,10 @@
 
   const root = document.createElement("div");
   root.className = "bevora-chat";
-  root.innerHTML = '<button class="bevora-chat-launcher" type="button" aria-label="Chat with Bevora" aria-expanded="false" aria-controls="bevora-chat-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2v-10A8.5 8.5 0 0 1 10.5 3h2a8.5 8.5 0 0 1 8.5 8.5Z"/><path d="M7 10h10M7 14h7"/></svg></button><section class="bevora-chat-panel" id="bevora-chat-panel" aria-labelledby="bevora-chat-title" hidden><div class="bevora-chat-header"><div><strong id="bevora-chat-title">Bevora Assistant</strong><small>Automated website guide</small></div><button class="bevora-chat-close" type="button" aria-label="Close chat">×</button></div><form class="bevora-chat-lead"><p>Welcome! What is your name and email?</p><label>Your name<input name="name" autocomplete="name" maxlength="100" required></label><label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required></label><small>Use email or WhatsApp to share your details and conversation for follow-up. <a href="/privacy/">Privacy notice</a></small><button type="submit">Start chatting</button></form><div class="bevora-chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" hidden></div><div class="bevora-chat-options" aria-label="Quick questions" hidden></div><form class="bevora-chat-form" hidden><label class="bevora-chat-label" for="bevora-chat-input">Your question</label><input id="bevora-chat-input" autocomplete="off" maxlength="300" placeholder="Ask about our services…" required><button type="submit" aria-label="Send question">Send</button></form><div class="bevora-chat-handoff" hidden><button class="bevora-chat-email" type="button">Send chat to Bevora</button><a class="bevora-chat-whatsapp" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a><small class="bevora-chat-status" role="status"></small></div><small class="bevora-chat-privacy">Please do not share patient or confidential information.</small></section>';
+  root.innerHTML = '<button class="bevora-chat-launcher" type="button" aria-label="Chat with Bevora" aria-expanded="false" aria-controls="bevora-chat-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-2 2v-10A8.5 8.5 0 0 1 10.5 3h2a8.5 8.5 0 0 1 8.5 8.5Z"/><path d="M7 10h10M7 14h7"/></svg></button><section class="bevora-chat-panel" id="bevora-chat-panel" aria-labelledby="bevora-chat-title" hidden><div class="bevora-chat-header"><div><strong id="bevora-chat-title">Bevora Assistant</strong><small>Automated website guide</small></div><button class="bevora-chat-close" type="button" aria-label="Close chat">×</button></div><form class="bevora-chat-lead"><p>Welcome! What is your name and email?</p><label>Your name<input name="name" autocomplete="name" maxlength="100" required></label><label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required></label><small>When you send your chat, FormSubmit delivers your name, email and conversation to Bevora for follow-up. You can also share it via WhatsApp. <a href="/privacy/">Privacy notice</a></small><button type="submit">Start chatting</button></form><div class="bevora-chat-log" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" hidden></div><div class="bevora-chat-options" aria-label="Quick questions" hidden></div><form class="bevora-chat-form" hidden><label class="bevora-chat-label" for="bevora-chat-input">Your question</label><input id="bevora-chat-input" autocomplete="off" maxlength="300" placeholder="Ask about our services…" required><button type="submit" aria-label="Send question">Send</button></form><div class="bevora-chat-handoff" hidden><button class="bevora-chat-email" type="button">Send chat to Bevora</button><a class="bevora-chat-whatsapp" target="_blank" rel="noopener noreferrer">Send via WhatsApp</a><small class="bevora-chat-status" role="status"></small></div><small class="bevora-chat-privacy">Please do not share patient or confidential information.</small></section>';
   document.body.append(root);
   const launcher=root.querySelector(".bevora-chat-launcher"),panel=root.querySelector(".bevora-chat-panel"),close=root.querySelector(".bevora-chat-close"),log=root.querySelector(".bevora-chat-log"),form=root.querySelector(".bevora-chat-form"),input=form.querySelector("input"),leadForm=root.querySelector(".bevora-chat-lead"),handoff=root.querySelector(".bevora-chat-handoff"),emailButton=root.querySelector(".bevora-chat-email"),whatsapp=root.querySelector(".bevora-chat-whatsapp"),status=root.querySelector(".bevora-chat-status");
-  let lead=null, lastSent="";
+  let lead=null, lastSent="", sending=false;
   const transcript=[];
   const chatText=()=>["Bevora website chat","Name: "+lead.name,"Email: "+lead.email,"Page: "+window.location.href,"",...transcript].join("\n");
   const updateWhatsApp=()=>{if(lead)whatsapp.href="https://wa.me/12157920894?text="+encodeURIComponent(chatText())};
@@ -49,7 +49,7 @@
     const content=document.createElement("p");content.textContent=text;bubble.append(content);
     links.forEach(([label,url])=>{const a=document.createElement("a");a.textContent=label;a.href=url;bubble.append(a)});
     log.append(bubble);log.scrollTop=log.scrollHeight;updateWhatsApp();
-    if(lead&&emailButton.disabled){emailButton.disabled=false;emailButton.textContent="Send updated chat";}
+    if(lead&&!sending&&emailButton.disabled){emailButton.disabled=false;emailButton.textContent="Send updated chat";}
   };
   leadForm.addEventListener("submit",event=>{
     event.preventDefault();
@@ -72,9 +72,24 @@
     event.preventDefault();const question=input.value.trim();if(!question||!lead)return;
     append(question,true);input.value="";const answer=chooseAnswer(question);append(answer.text,false,answer.links);
   });
-  emailButton.addEventListener("click",()=>{
-    if(!lead)return;
-    window.location.href="mailto:admin@bevorahealth.com?subject="+encodeURIComponent("Bevora website chat enquiry")+"&body="+encodeURIComponent(chatText());
-    status.textContent="Your email app will open with your chat details. Tap Send there to contact Bevora.";
+  emailButton.addEventListener("click",async()=>{
+    if(!lead||sending)return;
+    const text=chatText();if(text===lastSent)return;
+    sending=true;emailButton.disabled=true;emailButton.textContent="Sending…";status.textContent="";
+    const controller=new AbortController();const timeout=window.setTimeout(()=>controller.abort(),15000);
+    try{
+      const response=await fetch("https://formsubmit.co/ajax/admin@bevorahealth.com",{
+        method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+        body:JSON.stringify({name:lead.name,email:lead.email,_replyto:lead.email,_subject:"New Bevora website chat lead",_captcha:"false",_template:"table",message:text}),signal:controller.signal
+      });
+      const result=await response.json();
+      if(!response.ok||!(result.success===true||result.success==="true"))throw new Error("Submission failed");
+      lastSent=text;emailButton.textContent="Chat sent";status.textContent="Your chat was submitted to Bevora. To share it on WhatsApp too, open WhatsApp and tap Send.";
+    }catch(error){
+      emailButton.disabled=false;emailButton.textContent="Try sending again";status.textContent="Your chat could not be submitted. Please try again or use WhatsApp.";
+    }finally{
+      sending=false;window.clearTimeout(timeout);
+      if(lastSent&&chatText()!==lastSent){emailButton.disabled=false;emailButton.textContent="Send updated chat";}
+    }
   });
 })();
