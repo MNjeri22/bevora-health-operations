@@ -326,3 +326,45 @@ if(menu&&nav){
     if (home) home.focus({ preventScroll: true });
   });
 })();
+
+/* Gentle, one-time scroll reveals across every page. Content stays visible if unsupported. */
+(() => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reducedMotion.matches || !("IntersectionObserver" in window) || !Element.prototype.animate) return;
+  const selector = [
+    "main .section-head", "main .page-hero h1:not(.service-area-title)", "main .page-hero p",
+    "main .hero-copy h1", "main .hero-copy > p", "main figure",
+    "main .service-grid > a", "main .service-details > article",
+    "main .card", "main .audience-grid > article", "main .audience-home-grid > *",
+    "main .steps > article", "main .location-card", "main .region",
+    "main .faq details", "main .tool-logos", "main .accreditation-logos",
+    "main .cta > div", "main .prose > h2", "main .prose > p", "main .values > *"
+  ].join(",");
+  const activeAnimations = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      if (reducedMotion.matches || entry.target.contains(document.activeElement)) return;
+      const photo = entry.target.tagName === "FIGURE";
+      const animation = entry.target.animate([
+        { opacity: 0.25, transform: photo ? "scale(0.97)" : "translateY(20px)" },
+        { opacity: 1, transform: "none" }
+      ], {
+        duration: photo ? 650 : 520,
+        delay: Math.min(index, 2) * 65,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+      });
+      activeAnimations.add(animation);
+      animation.finished.then(() => activeAnimations.delete(animation), () => activeAnimations.delete(animation));
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -20px 0px" });
+  document.querySelectorAll(selector).forEach((element) => observer.observe(element));
+  const respectMotionPreference = () => {
+    if (!reducedMotion.matches) return;
+    observer.disconnect();
+    activeAnimations.forEach((animation) => animation.finish());
+    activeAnimations.clear();
+  };
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener("change", respectMotionPreference);
+})();
