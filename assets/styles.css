@@ -934,7 +934,7 @@ footer,.global-footer{background:#064e55}
 
 /* Persistent announcement and back-to-top control */
 :root{--announcement-height:38px;--header-height:84px}
-.announcement{position:sticky;top:0;z-index:30;height:var(--announcement-height)}
+.announcement{position:sticky;top:0;z-index:30;height:40px;min-height:40px;max-height:40px;line-height:1;contain:size layout}
 .site-header{top:var(--announcement-height)}
 html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) + 16px)}
 .back-to-top{position:fixed;right:clamp(1rem,3vw,2rem);bottom:calc(1.25rem + env(safe-area-inset-bottom));z-index:19;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;background:#012C69;color:#ffe17a;box-shadow:0 4px 16px rgba(1,44,105,.2);cursor:pointer;transition:background .2s,transform .2s}
@@ -1035,3 +1035,6 @@ html{scroll-padding-top:calc(var(--announcement-height) + var(--header-height) +
 
 /* Bridge the desktop gap between a menu trigger and its panel. */
 @media(min-width:981px){.services-mega::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}}
+
+/* Keep the marquee compact under mobile text resizing. */
+.announcement .reliable-marquee{height:100%;vertical-align:top}.announcement .reliable-marquee span{line-height:24px;padding-top:8px;padding-bottom:8px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
